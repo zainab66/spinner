@@ -19,30 +19,22 @@ setTimeout(() => {
   }, 700);
   
   */
+ let z = 200;
 
- setTimeout(() => {
-  process.stdout.write('\rZ   ');
-}, 100);
-
-setTimeout(() => {
-  process.stdout.write('\rA   ');
-}, 300);
-
-setTimeout(() => {
-  process.stdout.write('\rI   ');
-}, 500);
-
-setTimeout(() => {
-  // Need to escape the backslash since it's a special character.
-  process.stdout.write('\rN   '); 
-}, 700);
-
-setTimeout(() => {
-  // Need to escape the backslash since it's a special character.
-  process.stdout.write('\rA   '); 
-}, 900);
-
-setTimeout(() => {
-  // Need to escape the backslash since it's a special character.
-  process.stdout.write('\rB   '); 
-}, 1100);
+ for (let i = 0; i < 100; i++) {
+   setTimeout(() => {
+     process.stdout.write('\r |   ');
+   }, z + (i * 1000));
+   setTimeout(() => {
+     process.stdout.write('\r /   ');
+   }, 2 * z + (i * 1000));
+   setTimeout(() => {
+     process.stdout.write('\r -   ');
+   }, 3 * z + (i * 1000));
+   setTimeout(() => {
+     process.stdout.write('\r \\   ');
+   }, 4 * z + (i * 1000));
+   setTimeout(() => {
+     process.stdout.write('\r |   ');
+   }, 5 * z + (i * 1000));
+ }
